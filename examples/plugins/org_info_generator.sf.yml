@@ -1,0 +1,11 @@
+- plugin: orgInfoGenerator.OrgInfoGenerationPlugin
+
+- object: SalesforceOrg
+  count: 10000
+  fields:
+    org_id: ${{OrgInfoGenerationPlugin.generate_org_id()}}
+    instance: ${{OrgInfoGenerationPlugin.get_instance_for_org(org_id)}}
+    org_name: ${{OrgInfoGenerationPlugin.generate_org_name()}}
+    version: ${{OrgInfoGenerationPlugin.generate_org_version()}}
+    status: ${{OrgInfoGenerationPlugin.generate_org_status()}}
+    type: ${{OrgInfoGenerationPlugin.generate_org_type()}}
